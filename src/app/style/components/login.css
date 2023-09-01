@@ -1,0 +1,22 @@
+.login-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.login-page .card{
+    max-width: 400px;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.login-page form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.login-page button{
+    width: 100%;
+}

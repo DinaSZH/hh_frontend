@@ -1,0 +1,67 @@
+body{
+    margin: 0;
+}
+
+body, div, input, a, li, ul, ol, textarea, span, p, h1, h2, h3, aside, main{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container{
+    max-width: 1250px;
+    width: 100%;
+    padding: 0 20px;
+    display: block;
+    margin: 0 auto;
+}
+
+.flex{
+    display: flex;
+}
+
+.flex-cl{
+    flex-direction: column;
+}
+
+.flex-jc-c{
+    justify-content: center;
+}
+
+.flex-jc-sb{
+    justify-content: space-between;
+}
+
+.flex-ai-c{
+    align-items: center;
+}
+
+.flex-ai-sb{
+    align-items: space-between;
+}
+
+.p0{
+    padding: 0;
+}
+
+.p1{
+    padding: 5px;
+}
+
+.p2{
+    padding: 10px;
+}
+
+.p3{
+    padding: 15px;
+}
+
+.p4{
+    padding: 20px;
+}
+
+.p7{
+    padding: 40px;
+}
+
+.ptb7{
+    padding: 40px 0;
+}
