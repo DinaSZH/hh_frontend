@@ -65,3 +65,34 @@ body, div, input, a, li, ul, ol, textarea, span, p, h1, h2, h3, aside, main{
 .ptb7{
     padding: 40px 0;
 }
+
+.m1{
+    margin: 5px;
+}
+
+.m2{
+    margin: 10px;
+}
+
+.m3{
+    margin: 15px;
+}
+
+.m4{
+    margin: 20px;
+}
+
+.m7{
+    margin: 40px;
+}
+
+.mtb2{
+    margin: 10px 0;
+}
+
+.mtb4{
+    margin: 20px 0;
+}
+.mtb7{
+    margin: 40px 0;
+}
