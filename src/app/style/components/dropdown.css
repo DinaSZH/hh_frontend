@@ -1,0 +1,23 @@
+.dropdown{
+    position: absolute;
+    top: 60px;
+    right: 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 70%;
+}
+
+.dropdown a{
+    display: block;
+    padding: 10px 20px;
+    border-bottom: 1px solid #e7e7e7;
+    cursor: pointer;
+}
+
+.dropdown a:last-child{
+    border-bottom: none;
+}
+
+.dropdown a:hover{
+    background-color: #e4e4e4;
+}

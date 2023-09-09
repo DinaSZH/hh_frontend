@@ -4,6 +4,7 @@
     border: none;
     outline: none;
     padding: 20px 0;
+    position: relative;
 }
 
 .fieldset-sm{
