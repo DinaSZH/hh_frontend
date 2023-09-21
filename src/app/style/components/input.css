@@ -24,3 +24,14 @@
     display: inline-block;
     margin-left: auto;
 }
+
+.textarea{
+    height: 200px;
+    border-radius: 4px;
+    padding: 0 20px;
+    width: 100%;
+    border: 1px solid #ddd;
+    outline: none;
+    resize: none;
+    padding-top: 10px;
+}

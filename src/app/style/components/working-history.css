@@ -1,0 +1,10 @@
+.working-history{
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.working-history span{
+    color: #1785e5;
+}
