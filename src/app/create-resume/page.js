@@ -6,7 +6,7 @@ import { END_POINT } from '@/config/end-point';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import AutoCompleteSelect from '@/components/AutoCompleteSelect';
-import AutoCompleteTags from '@/components/AutoCompleteSelect';
+import AutoCompleteTags from '@/components/AutoCompleteTags';
 import SelectDate from '@/components/SelectDate';
 import ModalAddExp from '@/components/ModalAddExp';
 import WorkingHistory from '../../components/WorkingHistory/index';
@@ -14,6 +14,7 @@ import WorkingHistory from '../../components/WorkingHistory/index';
 export default function CreateResume() {
     const [cities, setCities] = useState([]);
     const [countries, setCountries] = useState([]);
+    const [skills, setSkills] = useState([]);
 
     const [workingHistories, SetWorkingHistories] = useState([]);
 
@@ -27,6 +28,10 @@ export default function CreateResume() {
         axios.get(`${END_POINT}/api/region/countries`).then(res => {
           setCountries(res.data);
       })
+
+      axios.get(`${END_POINT}/api/skills`).then(res => {
+        setSkills(res.data);
+    })
     }, [])
 
    console.log("rerender")
@@ -116,6 +121,9 @@ export default function CreateResume() {
             <label>О себе</label>
             <input className="textarea" placeholder="Расскажите о себе" />
         </fieldset>
+
+
+        <AutoCompleteTags placeholder="" type="text" label="Ключевые навыки" size="fieldset-md" items={skills} onSelect={onSelect}/>
       </div>
     </main>
   )
