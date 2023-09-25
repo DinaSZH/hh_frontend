@@ -40,3 +40,24 @@
     resize: none;
     padding-top: 10px;
 }
+
+.lns{
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.lns select:last-child{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-right: 1px solid #ddd;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.lns .remove{
+    position: absolute;
+    right: -10px;
+    top: 10px;
+    cursor: pointer;
+}
+
