@@ -16,7 +16,7 @@ export default function AddEducation({onChange}) {
 
     const newEducation = () => {
         setEducation([...education, {
-            level: "",
+            level: "Высшее",
             university_name: "",
             faculty: "",
             major: "",
@@ -39,7 +39,7 @@ export default function AddEducation({onChange}) {
     <span onClick={() => removeEd(ed)}>X</span>
     <fieldset className={"fieldset fieldset-md"} >
         <label>Уровень</label>
-        <select  className="input" onChange={onChangeData} name={index + "-level"} value={ed.value}>
+        <select  className="input" onChange={onChangeData} name={index + "-level"} value={ed.level}>
             <option value={"Высшее"}>Высшее</option>
             <option value={"Не полное высшее"}>Не полное высшее</option>
         </select>

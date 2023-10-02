@@ -1,6 +1,6 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
-export default function SelectEmploymentTypes({employmentTypes, label, size}) {
+export default function SelectEmploymentTypes({employmentTypes, label, size, onChange}) {
     const [eTypes, setETypes] = useState([])
 
     const onSelect = (e) => {
@@ -15,6 +15,10 @@ export default function SelectEmploymentTypes({employmentTypes, label, size}) {
             setETypes(tps)
         }
     }
+
+    useEffect(() => {
+        onChange(eTypes)
+    }, [eTypes])
 
     console.log(eTypes)
     return(
