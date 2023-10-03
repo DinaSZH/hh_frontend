@@ -27,6 +27,7 @@ export default function ResumePage() {
         </div> 
         <MyResumes resumes={resumes}/>
       </div>
+      
     </main>
   )
 }

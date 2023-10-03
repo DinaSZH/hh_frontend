@@ -18,12 +18,17 @@ export const resumeSlice = createSlice({
     },
     setResume: (state, action) => {
       state.resume = action.payload.resume
+    },
+    handleDeleteResume: (state, action) => {
+      let resumes = [...state.resumes]
+      resumes = resumes.filter(item => item.id !== action.payload)
+      state.resumes = resumes
     }
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { setMyResumes, uppendResume, setResume } = resumeSlice.actions
+export const { setMyResumes, uppendResume, setResume, handleDeleteResume} = resumeSlice.actions
 
 export const getMyResumes = () => async (dispatch) => {
   try{
@@ -53,6 +58,26 @@ export const createResume = (sendData, router) => async (dispatch) => {
     alert("Что то пошло не так, сообщите об ошибке Тех спецам сайта!")
   }
       
+}
+
+export const editResume = (sendData, router) => async (dispatch) => {
+  try{
+    const res = await axios.put(`${END_POINT}/api/resume`, sendData);
+    router.push("/resumes")
+  } catch(e) {
+
+    alert("Что то пошло не так, сообщите об ошибке Тех спецам сайта!")
+  }   
+}
+
+export const deleteResume = (id) => async (dispatch) => {
+  try{
+    const res = await axios.delete(`${END_POINT}/api/resume/${id}`);
+    dispatch(handleDeleteResume(id))
+  } catch(e) {
+
+    alert("Что то пошло не так, сообщите об ошибке Тех спецам сайта!")
+  }   
 }
 
 

@@ -4,4 +4,5 @@
     -moz-box-shadow: 0px 3px 8px 0px rgba(34, 60, 80, 0.2); 
     box-shadow: 0px 3px 8px 0px rgba(34, 60, 80, 0.2);
     padding: 20px;
+    position: relative;
 }
