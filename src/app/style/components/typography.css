@@ -20,3 +20,7 @@ h4, .h4{
     color: #589BEB;
     text-decoration: none;
 }
+
+.error{
+    color: #ff0000;
+}
