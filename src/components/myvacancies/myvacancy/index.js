@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link'
-import { useDispatch } from 'react-redux'
-import { deleteResume } from '@/app/store/slices/resumeSlice'
+import { useDispatch, useSelector } from 'react-redux'
+import { deleteVacancy } from '@/app/store/slices/vacancySlice';
 export default function MyVacancy ({item}) {
     const dispatch = useDispatch()
     return(<div className="card mtb4">
@@ -9,6 +9,6 @@ export default function MyVacancy ({item}) {
         <p>Создан {item.createdAt}</p>
 
         
-        <span className='deleteResume' onClick={() => dispatch(deleteResume(item.id))}>Удалить</span>
+        <span className='deleteResume' onClick={() => dispatch(deleteVacancy(item.id))}>Удалить</span>
     </div>)
 }

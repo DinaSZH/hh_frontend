@@ -27,3 +27,21 @@
     display: flex;
     align-items: center;
 }
+
+.fieldset-vertical{
+    border: none;
+    margin: 0 0 30px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.fieldset-vertical label{
+    font-weight: 700;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.fieldset-vertical .dropdown{
+    top: 78px;
+}
