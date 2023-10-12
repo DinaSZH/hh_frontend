@@ -96,6 +96,13 @@ body, div, input, a, li, ul, ol, textarea, span, p, h1, h2, h3, aside, main{
 .mtb7{
     margin: 40px 0;
 }
+.mt2 {
+    margin-top: 10px;
+}
+
+.mt7 {
+    margin-top: 40px;
+}
 
 .mr4{
     margin-right: 20px;

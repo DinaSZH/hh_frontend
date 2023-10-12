@@ -4,12 +4,31 @@ import logo from '../../app/images/logo.png'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useSelector, useDispatch } from 'react-redux'
-import { logOut } from '@/app/store/slices/authSlice'
+import { logOut, authorize} from '@/app/store/slices/authSlice'
+import { useEffect } from 'react'
+import jwt_decode from 'jwt-decode'
+import { useRouter } from 'next/navigation'
 
 export default function Header() {
     const dispatch = useDispatch();
     const isAuth = useSelector((state) => state.auth.isAuth)
     const currentUser = useSelector((state) => state.auth.currentUser)
+    const router = useRouter()
+
+    useEffect(() => {
+        const token = localStorage.getItem("token")
+        if(token) {
+            let decodedToken = jwt_decode(token)
+            if(decodedToken.exp * 1000 > Date.now()) {
+                dispatch(authorize({token}))
+            } else {
+                localStorage.removeItem("token")
+            }
+        }
+
+    }, [])
+
+
     return(
         <header className="header">
             <div className="container">
@@ -22,13 +41,15 @@ export default function Header() {
 
                         {currentUser && currentUser.role && currentUser.role.name !=="manager" &&
                         <Link href="/resumes">Мои Резюме</Link>}
+                         {currentUser && currentUser.role && currentUser.role.name !== "manager" && <Link href="/applies">Отклики</Link>}
                         <a>Помощь</a>
                     </div>
 
                     <div>
-                        <button className="header-search"> 
+                        <Link className="header-search" href="/search/vacancy/advanced">
+                            {/* <Image src={searchIcon} alt="icon"/> */}
                             Поиск
-                        </button>
+                        </Link>
 
                         {currentUser && currentUser.role && currentUser.role.name ==="manager" &&
                         <Link href="/create-vacancy" className="header-button header-button--green">
@@ -44,7 +65,7 @@ export default function Header() {
                         {!isAuth && <Link href="/login" className="header-button" >
                             Войти
                         </Link>}
-                        {isAuth && <a className="header-button" onClick={() => dispatch(logOut())}>
+                        {isAuth && <a className="header-button" onClick={() => dispatch(logOut(router))}>
                             Выйти
                         </a>}
                     </div>

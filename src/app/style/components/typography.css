@@ -19,6 +19,7 @@ h4, .h4{
 .link{
     color: #589BEB;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .error{

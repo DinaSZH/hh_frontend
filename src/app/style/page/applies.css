@@ -1,0 +1,30 @@
+.list {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 5px;
+    width: 250px;
+    margin-bottom: auto;
+}
+
+.list-item {
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+.list-item.active {
+    background-color: #e7e7e7;
+}
+
+.list-item:hover {
+    background-color: #e7e7e7;
+}
+
+.list-item:last-child {
+    margin-bottom: 0;
+}
+
+.applies {
+    width: calc(100% - 270px);
+}
