@@ -73,7 +73,7 @@ export default function AutoCompleteTags({label, placeholder, type, size, items,
     return(
         <div className="fieldset-lg"> 
             <div className="tags">
-                {value.length > 0 && value.map( tag =>  <div className="tag">
+                {value.length > 0 && value.map( tag =>  <div key={tag.id} className="tag">
                 <span>{tag.name}</span> <i onClick={() => deleteTag(tag)}>X</i>
                 </div> )}
             </div>

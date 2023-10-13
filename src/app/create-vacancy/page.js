@@ -10,9 +10,6 @@ import { useRouter } from "next/navigation"
 import dynamic from "next/dynamic"
 import AutoCompleteTags from "@/components/AutoCompleteTags"
 
-import { CKEditor } from '@ckeditor/ckeditor5-react';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-
 
 export default function CreateVacancy() {
     const [name, setName] = useState("")
@@ -81,7 +78,7 @@ export default function CreateVacancy() {
         }, router))
       }
 
-   // const Editor = dynamic(() => import("./editor"), { ssr: false });
+   const Editor = dynamic(() => import("./editor"), { ssr: false });
     return (
         <main>
             <Header />
@@ -135,25 +132,7 @@ export default function CreateVacancy() {
                 <fieldset className="fieldset-vertical fieldset-md">
                     <label>Расскажите про вакансию</label>
                     <div>
-                        <CKEditor heigth="500" editor={ ClassicEditor }
-                            data={description}
-                            onReady={ editor => {
-                                // You can store the "editor" and use when it is needed.
-                                console.log( 'Editor is ready to use!', editor );
-                            } }
-                            config={ {
-                                toolbar: [ 'bold', 'italic', 'bulletedList', 'numberedList', 'redo' ]
-                            } }
-                            onChange={ ( event, editor ) => {
-                                const data = editor.getData();
-                                setDescription(data)
-                            } }
-                            onBlur={ ( event, editor ) => {
-                                console.log( 'Blur.', editor );
-                            } }
-                            onFocus={ ( event, editor ) => {
-                                console.log( 'Focus.', editor );
-                            } }/>
+                        <Editor description={description} setDescription={setDescription}/>
                     </div>
                     
                 </fieldset>

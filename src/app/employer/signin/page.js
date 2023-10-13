@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import { setError, signIn} from '@/app/store/slices/authSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { useRouter } from 'next/navigation';
+import Header from '@/components/header';
 
 export default function EmployerSignin() {
   const [email, setEmail] = useState("");
@@ -32,6 +33,7 @@ export default function EmployerSignin() {
 
   return (
     <main className='bg'>
+           <Header />
         <div className='container'>
           <div className='auth-header'>
           <Image className='logo' src={logo} alt='logo'/>

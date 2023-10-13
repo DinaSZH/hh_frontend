@@ -170,7 +170,7 @@ export default function CreateResume() {
             <label>Места работы</label>
 
             <div className='exp'>
-                {workingHistories.map(item => (<WorkingHistory workingHistory={item} remove={removeWorkingHistory}/>))}
+                {workingHistories.map(item => (<WorkingHistory key={item.id}  workingHistory={item} remove={removeWorkingHistory}/>))}
                 <button className='button button-primary-bordered' onClick={() => setModalExpIsOpen(true)}>Добавить место работы</button>
             </div>           
         </fieldset>

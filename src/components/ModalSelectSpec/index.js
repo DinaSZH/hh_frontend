@@ -29,7 +29,7 @@ export default function ModalSelectSpec({close, onChange, value}) {
             <h2>Кого вы хотите найти</h2>
             <input className="input" type="text" value={search} onChange={onSearch}/>
 
-             {filteredSpecTypes.map(specType => (<SpecType specType={specType} onChange={onChange} value={value}/>))}
+             {filteredSpecTypes.map(specType => (<SpecType key={specType.id} specType={specType} onChange={onChange} value={value}/>))}
         </div>    
     </div>
     )

@@ -72,7 +72,7 @@ export default function ResumePage() {
             let end = new Date(job.end_date)
             
             return (
-                <div className='flex working-history'>
+                <div className='flex working-history' key={job.id}>
                     <div className='working-history-date mr4'>
                         {monthsInRussian2[start.getMonth()]} {start.getFullYear()} -  {monthsInRussian2[end.getMonth()]} {end.getFullYear()}
                     </div>
@@ -88,7 +88,7 @@ export default function ResumePage() {
 
         <h3>Ключевые навыки</h3>
 
-        {skills.map(skill => (<span className='tag mr4'>{skill}</span>))}
+        {skills.map(skill => (<span key={skill} className='tag mr4'>{skill}</span>))}
 
         <h3>Обо мне</h3>
 
@@ -100,7 +100,7 @@ export default function ResumePage() {
             let end = new Date(ed.end_date)
             
             return (
-                <div className='flex working-history'>
+                <div key={ed.id} className='flex working-history'>
                     <div className='working-history-date mr4'>
                         {end.getFullYear()}
                     </div>
@@ -115,7 +115,7 @@ export default function ResumePage() {
 
         <h3>Знание языков</h3>
         {resume.foreignLanguages && resume.foreignLanguages.map((fl, key) => (
-            <p className='tag mr4'>{fl.name} - {fl.level}</p>
+            <p key={fl.id} className='tag mr4'>{fl.name} - {fl.level}</p>
         ))}
 
         <h3>Гражданство</h3>

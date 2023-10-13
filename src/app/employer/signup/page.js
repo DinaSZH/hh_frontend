@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import { signUp , setError} from '@/app/store/slices/authSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { useRouter } from "next/navigation"
+import Header from '@/components/header';
 export default function EmployerSignup() {
   const [email, setEmail] = useState("");
   const [step, setStep] = useState(1);
@@ -48,7 +49,9 @@ export default function EmployerSignup() {
 
   return (
     <main className='bg'>
+      <Header />
         <div className='container'>
+          
           <div className='auth-header'>
           <Image className='logo' src={logo} alt='logo'/>
               <p>Ответим на ваши вопросы</p>
@@ -63,7 +66,7 @@ export default function EmployerSignup() {
                     <input className="input" placeholder="Введите email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
                     <button className="button button-primary" onClick={()=>setStep(2)}>Продолжить</button>
                 </form>
-                {error && Object.keys(error).map(key => (<p className='error'>{error[key]}</p>))}
+                {error && Object.keys(error).map(key => (<p key={key} className='error'>{error[key]}</p>))}
             </div>}
 
             {step === 2 &&
@@ -75,7 +78,7 @@ export default function EmployerSignup() {
                     <button className="button button-primary" type="button" onClick={()=>setStep(3)}>Продолжить</button>
                     <button className="button button-primary-bordered" onClick={()=>setStep(1)}>Назад</button>
                 </form>
-                {error && Object.keys(error).map(key => (<p className='error'>{error[key]}</p>))}
+                {error && Object.keys(error).map(key => (<p  key={key} className='error'>{error[key]}</p>))}
             </div>}
 
             {step === 3 &&
@@ -90,7 +93,7 @@ export default function EmployerSignup() {
                     <button className="button button-primary" type="button" onClick={()=>setStep(4)}>Продолжить</button>
                     <button className="button button-primary-bordered" onClick={()=>setStep(2)}>Назад</button>
                 </form>
-                {error && Object.keys(error).map(key => (<p className='error'>{error[key]}</p>))}
+                {error && Object.keys(error).map(key => (<p key={key} className='error'>{error[key]}</p>))}
             </div>}
 
             {step === 4 &&
